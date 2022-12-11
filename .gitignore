@@ -141,7 +141,7 @@ dmypy.json
 *calib_cache
 
 # video and image files
-*.jpg
+# *.jpg
 *.jpeg
 *.png
 *.bmp

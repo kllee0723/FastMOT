@@ -1,4 +1,4 @@
-ARG TRT_IMAGE_VERSION=20.09
+ARG TRT_IMAGE_VERSION=22.11
 FROM nvcr.io/nvidia/tensorrt:${TRT_IMAGE_VERSION}-py3
 
 ARG TRT_IMAGE_VERSION
@@ -77,7 +77,7 @@ WORKDIR ${APP_DIR}/FastMOT
 COPY requirements.txt .
 
 # Specify your GPU compute with --build-arg for CuPy (e.g. "arch=compute_75,code=sm_75")
-ARG CUPY_NVCC_GENERATE_CODE
+ARG CUPY_NVCC_GENERATE_CODE="arch=compute_86,code=sm_86"
 
 # TensorFlow < 2 is not supported in ubuntu 20.04
 RUN if [[ -z ${CUPY_NVCC_GENERATE_CODE} ]]; then \
